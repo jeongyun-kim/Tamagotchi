@@ -10,9 +10,9 @@
 		E09454742C13622C00D2E9B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454732C13622C00D2E9B3 /* AppDelegate.swift */; };
 		E09454762C13622C00D2E9B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454752C13622C00D2E9B3 /* SceneDelegate.swift */; };
 		E09454782C13622C00D2E9B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454772C13622C00D2E9B3 /* ViewController.swift */; };
-		E094547B2C13622C00D2E9B3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E094547A2C13622C00D2E9B3 /* Base */; };
 		E094547D2C13622D00D2E9B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E094547C2C13622D00D2E9B3 /* Assets.xcassets */; };
 		E09454802C13622D00D2E9B3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E094547F2C13622D00D2E9B3 /* Base */; };
+		E09454882C13624300D2E9B3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E09454872C13624300D2E9B3 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +20,10 @@
 		E09454732C13622C00D2E9B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E09454752C13622C00D2E9B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E09454772C13622C00D2E9B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E094547A2C13622C00D2E9B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E094547C2C13622D00D2E9B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E094547F2C13622D00D2E9B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E09454812C13622D00D2E9B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E09454872C13624300D2E9B3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +40,7 @@
 		E09454672C13622C00D2E9B3 = {
 			isa = PBXGroup;
 			children = (
+				E09454872C13624300D2E9B3 /* .gitignore */,
 				E09454722C13622C00D2E9B3 /* Tamagotchi */,
 				E09454712C13622C00D2E9B3 /* Products */,
 			);
@@ -59,7 +60,6 @@
 				E09454732C13622C00D2E9B3 /* AppDelegate.swift */,
 				E09454752C13622C00D2E9B3 /* SceneDelegate.swift */,
 				E09454772C13622C00D2E9B3 /* ViewController.swift */,
-				E09454792C13622C00D2E9B3 /* Main.storyboard */,
 				E094547C2C13622D00D2E9B3 /* Assets.xcassets */,
 				E094547E2C13622D00D2E9B3 /* LaunchScreen.storyboard */,
 				E09454812C13622D00D2E9B3 /* Info.plist */,
@@ -125,9 +125,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09454882C13624300D2E9B3 /* .gitignore in Resources */,
 				E094547D2C13622D00D2E9B3 /* Assets.xcassets in Resources */,
 				E09454802C13622D00D2E9B3 /* Base in Resources */,
-				E094547B2C13622C00D2E9B3 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +147,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E09454792C13622C00D2E9B3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E094547A2C13622C00D2E9B3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E094547E2C13622D00D2E9B3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,9 +288,9 @@
 				INFOPLIST_FILE = Tamagotchi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +298,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jeongyun.Tamagotchi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,9 +319,9 @@
 				INFOPLIST_FILE = Tamagotchi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +329,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jeongyun.Tamagotchi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
