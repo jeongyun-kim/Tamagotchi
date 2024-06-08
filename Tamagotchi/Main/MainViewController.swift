@@ -16,11 +16,22 @@ enum ButtonImageType: String {
 
 class MainViewController: UIViewController, setupView {
     
-    var tamagochi: Tamagochi? = Tamagochi.list.first {
+    var tamagochi: Tamagochi?
+
+    var foodCnt = Tamagochi.food {
         didSet {
+            Tamagochi.food = foodCnt
             updateTamagochi()
         }
     }
+    
+    var waterCnt = Tamagochi.water {
+        didSet {
+            Tamagochi.water = waterCnt
+            updateTamagochi()
+        }
+    }
+    
     let messages = Message.list
     
     lazy var naviBorder: UIView = makeBorder(alpha: 0.2)
@@ -66,9 +77,14 @@ class MainViewController: UIViewController, setupView {
         setupHierarchy()
         setupConstraints()
         setupUI()
-        updateTamagochi()
+        addTargets()
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateTamagochi()
+    }
     
     func setupHierarchy() {
         view.addSubview(naviBorder)
@@ -157,12 +173,21 @@ class MainViewController: UIViewController, setupView {
         }
     }
     
+    // MARK: UI
     func setupUI() {
         view.backgroundColor = Color.backgroundColor
         navigationItem.title = "\(User.name)님의 다마고치"
         let settingItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = settingItem
         navigationController?.navigationBar.tintColor = Color.fontAndBorderColor
+        
+        foodTextField.delegate = self
+        waterTextField.delegate = self
+    }
+    
+    func addTargets() {
+        foodBtn.addTarget(self, action: #selector(foodBtnTapped), for: .touchUpInside)
+        waterBtn.addTarget(self, action: #selector(waterBtnTapped), for: .touchUpInside)
     }
     
     func updateTamagochi() {
@@ -172,5 +197,60 @@ class MainViewController: UIViewController, setupView {
         tamagochiImageView.image = UIImage(named: image)
         tamagochiNameLabel.text = tamagochi?.name
         tamagochiStatusLabel.text = tamagochi?.status
+    }
+    
+    // MARK: Action
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    @objc func foodBtnTapped(_ sender: UIButton) {
+        guard let food = foodTextField.text else { return }
+        // 아무런 입력이 없을 때
+        if food.isEmpty {
+            foodCnt += 1
+        } else { // 밥을 100개 이상 줬을 때
+            if Int(food)! >= 100 {
+                showToast(message: "밥은 한 번에 99개까지만 먹을 수 있어용")
+            } else { // 밥 100 미만
+                foodCnt += Int(food)!
+            }
+            foodTextField.text = ""
+        }
+    }
+    
+    @objc func waterBtnTapped(_ sender: UIButton) {
+        guard let water = waterTextField.text else { return }
+        // 아무것도 입력하지 않았다면
+        if water.isEmpty {
+            waterCnt += 1
+        } else { // 물 제한 50 이상
+            if Int(water)! >= 50 {
+                showToast(message: "물은 한 번에 49방울까지만 먹을 수 있어용")
+            } else { // 물 50 미만
+                waterCnt += Int(water)!
+            }
+            waterTextField.text = ""
+        }
+    }
+}
+
+
+// MARK: TextFieldDelegate
+extension MainViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // 부드러운 효과를 위해 애니메이션 처리 -> 뷰 250만큼 올리기
+       UIView.animate(withDuration: 0.3) {
+           let transform = CGAffineTransform(translationX: 0, y: -200)
+           self.view.transform = transform
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        // 뷰 다시 0으로 내리기
+        UIView.animate(withDuration: 0.3) {
+            let transform = CGAffineTransform(translationX: 0, y: 0)
+            self.view.transform = transform
+        }
     }
 }

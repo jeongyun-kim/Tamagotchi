@@ -58,7 +58,7 @@ class PopupViewController: UIViewController, setupView {
         return button
     }()
     
-    lazy var stackViewBorder: UIView = makeBorder()
+    lazy var stackViewBorder: UIView = makeBorder(alpha: 0.2)
     
     lazy var horizontalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -130,7 +130,7 @@ class PopupViewController: UIViewController, setupView {
         
         horizontalStackView.snp.makeConstraints {
             $0.top.equalTo(stackViewBorder.snp.bottom)
-            $0.height.equalTo(containerView.snp.height).multipliedBy(0.1)
+            $0.height.equalTo(containerView.snp.height).multipliedBy(0.12)
             $0.horizontalEdges.bottom.equalTo(containerView)
         }
     }

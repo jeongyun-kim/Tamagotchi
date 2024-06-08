@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 extension UIViewController {
     func makeBorder(alpha: CGFloat = 1) -> UIView {
@@ -21,6 +22,7 @@ extension UIViewController {
         textField.textAlignment = .center
         textField.borderStyle = .none
         textField.textColor = Color.fontAndBorderColor
+        textField.keyboardType = .numberPad
         return textField
     }
     
@@ -48,5 +50,12 @@ extension UIViewController {
         button.layer.cornerRadius = 6
         
         return button
+    }
+    
+    func showToast(message: String) {
+        var toastStyle = ToastStyle()
+        toastStyle.backgroundColor = Color.fontAndBorderColor
+        toastStyle.messageColor = .white
+        self.view.makeToast(message, position: .center, style: toastStyle)
     }
 }

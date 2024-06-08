@@ -18,7 +18,7 @@ struct Tamagochi {
     let type: TamagochiType
     let name: String
     // 레벨, 밥, 물방울은 다마고치를 변경하더라도 변경되지 않음 => 같은 값을 공유 
-    static var food: Int = 0
+    static var food: Int = 0 
     static var water: Int = 0
     
     static var level: Int {
