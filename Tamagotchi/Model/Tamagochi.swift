@@ -56,7 +56,7 @@ struct Tamagochi {
     var desc: String {
         switch type {
             case .green, .orange, .red:
-                "저는 \(name)에용✨\n저는 노는게 제일 좋아용 \(User().name)도 그렇죵?"
+                "저는 \(name)에용✨\n저는 노는게 제일 좋아용 \(User.name)도 그렇죵?"
             case .etc: 
                 "아직 준비 중"
         }

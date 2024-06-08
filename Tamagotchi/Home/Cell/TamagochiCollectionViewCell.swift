@@ -38,11 +38,11 @@ class TamagochiCollectionViewCell: UICollectionViewCell, setupView {
     
     func setupConstraints() {
         view.snp.makeConstraints {
-            $0.edges.equalTo(contentView).inset(12).priority(.high)
+            $0.edges.equalTo(contentView).inset(16).priority(.high)
         }
         
         imageView.snp.makeConstraints {
-            $0.size.equalTo(100)
+            $0.size.equalTo(110)
             $0.top.equalTo(view.snp.top)
             $0.centerX.equalTo(view.snp.centerX)
         }

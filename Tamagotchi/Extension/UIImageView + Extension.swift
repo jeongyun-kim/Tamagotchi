@@ -11,6 +11,6 @@ extension UIImageView {
     func configureImageView() {
         self.contentMode = .scaleAspectFill
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = 50
+        self.layer.cornerRadius = 55
     }
 }

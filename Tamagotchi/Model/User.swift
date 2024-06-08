@@ -8,5 +8,5 @@
 import Foundation
 
 struct User {
-    let name: String = "대장"
+    static let name: String = "대장"
 }
