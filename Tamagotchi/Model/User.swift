@@ -9,4 +9,5 @@ import Foundation
 
 struct User {
     static let name: String = "대장"
+    var selectedTamagochi: Tamagochi? = nil
 }

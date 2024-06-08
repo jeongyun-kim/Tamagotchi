@@ -8,8 +8,8 @@
 import UIKit
 
 extension UILabel {
-    func configureNameLabel() {
-        self.font = UIFont.systemFont(ofSize: 13)
+    func configureNameLabel(_ size: CGFloat = 13, _ weight: UIFont.Weight = .regular) {
+        self.font = UIFont.systemFont(ofSize: size, weight: weight)
         self.textColor = Color.fontAndBorderColor
         self.clipsToBounds = true
         self.layer.cornerRadius = 4

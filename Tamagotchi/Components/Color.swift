@@ -8,6 +8,6 @@
 import UIKit
 
 struct Color {
-    static let backgroundColer = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
+    static let backgroundColor = UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
     static let fontAndBorderColor = UIColor(red: 77/255, green: 106/255, blue: 120/255, alpha: 1)
 }

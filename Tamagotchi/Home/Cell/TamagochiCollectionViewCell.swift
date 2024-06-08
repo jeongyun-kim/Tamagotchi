@@ -27,7 +27,7 @@ class TamagochiCollectionViewCell: UICollectionViewCell, setupView {
         super.init(frame: frame)
         setupHierarchy()
         setupConstraints()
-        self.backgroundColor = Color.backgroundColer
+        self.backgroundColor = Color.backgroundColor
     }
     
     func setupHierarchy() {
@@ -38,11 +38,11 @@ class TamagochiCollectionViewCell: UICollectionViewCell, setupView {
     
     func setupConstraints() {
         view.snp.makeConstraints {
-            $0.edges.equalTo(contentView).inset(16).priority(.high)
+            $0.edges.equalTo(contentView).inset(12).priority(.high)
         }
         
         imageView.snp.makeConstraints {
-            $0.size.equalTo(110)
+            $0.size.equalTo(90)
             $0.top.equalTo(view.snp.top)
             $0.centerX.equalTo(view.snp.centerX)
         }
@@ -50,14 +50,14 @@ class TamagochiCollectionViewCell: UICollectionViewCell, setupView {
         nameLabel.snp.makeConstraints {
             $0.height.equalTo(25)
             $0.centerX.equalTo(view.snp.centerX)
-            $0.width.equalTo(imageView.snp.width)
+            $0.width.equalTo(view.snp.width)
             $0.top.equalTo(imageView.snp.bottom).offset(6)
             $0.bottom.equalTo(view.snp.bottom)
         }
     }
     
     func configureCell(_ data: Tamagochi) {
-        imageView.image = UIImage(named: data.imageName)
+        imageView.image = UIImage(named: data.mainImageName)
         nameLabel.text = data.name
     }
     

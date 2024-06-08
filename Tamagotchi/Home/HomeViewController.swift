@@ -56,8 +56,8 @@ class HomeViewController: UIViewController, setupView {
     }
     
     func setupUI() {
-        view.backgroundColor = Color.backgroundColer
-        collectionView.backgroundColor = Color.backgroundColer
+        view.backgroundColor = Color.backgroundColor
+        collectionView.backgroundColor = Color.backgroundColor
         navigationItem.title = "다마고치 선택하기"
     }
 }
@@ -75,5 +75,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        let vc = PopupViewController()
+        vc.tamagochi = list[indexPath.row]
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
     }
 }

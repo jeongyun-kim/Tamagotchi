@@ -22,6 +22,8 @@
 		E094549F2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094549E2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift */; };
 		E09454A52C13E75800D2E9B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454A42C13E75800D2E9B3 /* User.swift */; };
 		E09454AC2C13EA4300D2E9B3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454AB2C13EA4300D2E9B3 /* Color.swift */; };
+		E09454AE2C13EED400D2E9B3 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454AD2C13EED400D2E9B3 /* PopupViewController.swift */; };
+		E09454B02C14650100D2E9B3 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		E094549E2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagochiCollectionViewCell.swift; sourceTree = "<group>"; };
 		E09454A42C13E75800D2E9B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E09454AB2C13EA4300D2E9B3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		E09454AD2C13EED400D2E9B3 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			children = (
 				E09454972C136DB800D2E9B3 /* Cell */,
 				E09454892C13632E00D2E9B3 /* HomeViewController.swift */,
+				E09454AD2C13EED400D2E9B3 /* PopupViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			children = (
 				E094549A2C13752600D2E9B3 /* UIImageView + Extension.swift */,
 				E094549C2C13773F00D2E9B3 /* UILabel + Extension.swift */,
+				E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E094549F2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift in Sources */,
+				E09454B02C14650100D2E9B3 /* UIButton + Extension.swift in Sources */,
 				E09454742C13622C00D2E9B3 /* AppDelegate.swift in Sources */,
 				E09454762C13622C00D2E9B3 /* SceneDelegate.swift in Sources */,
 				E094548A2C13632E00D2E9B3 /* HomeViewController.swift in Sources */,
@@ -229,6 +236,7 @@
 				E094549D2C13773F00D2E9B3 /* UILabel + Extension.swift in Sources */,
 				E09454A52C13E75800D2E9B3 /* User.swift in Sources */,
 				E09454922C13694000D2E9B3 /* ReusableIdentifier.swift in Sources */,
+				E09454AE2C13EED400D2E9B3 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +385,8 @@
 				INFOPLIST_FILE = Tamagotchi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,8 +417,8 @@
 				INFOPLIST_FILE = Tamagotchi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
