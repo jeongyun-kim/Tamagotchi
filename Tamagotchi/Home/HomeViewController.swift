@@ -8,9 +8,16 @@
 import UIKit
 import SnapKit
 
+enum viewType {
+    case select
+    case change
+}
+
 class HomeViewController: UIViewController, setupView {
     
     var list: [Tamagochi] = Tamagochi.list
+    
+    var type: viewType = .select
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
@@ -58,7 +65,12 @@ class HomeViewController: UIViewController, setupView {
     func setupUI() {
         view.backgroundColor = Color.backgroundColor
         collectionView.backgroundColor = Color.backgroundColor
-        navigationItem.title = "다마고치 선택하기"
+        switch type {
+        case .select:
+            navigationItem.title = "다마고치 선택하기"
+        case .change:
+            navigationItem.title = "다마고치 변경하기"
+        }
     }
 }
 
@@ -78,6 +90,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let vc = PopupViewController()
         vc.tamagochi = list[indexPath.row]
         vc.modalPresentationStyle = .overCurrentContext
+        //let navi = UINavigationController(rootViewController: vc)
+        //navi.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
     }
 }

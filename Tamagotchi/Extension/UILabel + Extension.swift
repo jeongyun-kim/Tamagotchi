@@ -18,4 +18,11 @@ extension UILabel {
         self.backgroundColor = .clear
         self.textAlignment = .center
     }
+    
+    func configureDescLabel(_ size: CGFloat = 14, _ weight: UIFont.Weight = .regular) {
+        self.font = UIFont.systemFont(ofSize: size, weight: weight)
+        self.textColor = Color.fontAndBorderColor
+        self.textAlignment = .center
+        self.numberOfLines = 0
+    }
 }

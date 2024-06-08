@@ -26,6 +26,8 @@
 		E09454B02C14650100D2E9B3 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */; };
 		E09454B22C14678500D2E9B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454B12C14678500D2E9B3 /* Message.swift */; };
 		E09454B42C14690E00D2E9B3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454B32C14690E00D2E9B3 /* MainViewController.swift */; };
+		E09454B82C146DB100D2E9B3 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */; };
+		E09454BB2C1478A500D2E9B3 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E09454BA2C1478A500D2E9B3 /* Toast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,7 @@
 		E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		E09454B12C14678500D2E9B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E09454B32C14690E00D2E9B3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09454BB2C1478A500D2E9B3 /* Toast in Frameworks */,
 				E09454902C13692200D2E9B3 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +145,7 @@
 				E094549A2C13752600D2E9B3 /* UIImageView + Extension.swift */,
 				E094549C2C13773F00D2E9B3 /* UILabel + Extension.swift */,
 				E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */,
+				E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			name = Tamagotchi;
 			packageProductDependencies = (
 				E094548F2C13692200D2E9B3 /* SnapKit */,
+				E09454BA2C1478A500D2E9B3 /* Toast */,
 			);
 			productName = Tamagotchi;
 			productReference = E09454702C13622C00D2E9B3 /* Tamagotchi.app */;
@@ -218,6 +224,7 @@
 			mainGroup = E09454672C13622C00D2E9B3;
 			packageReferences = (
 				E094548E2C13692200D2E9B3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E09454B92C1478A500D2E9B3 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = E09454712C13622C00D2E9B3 /* Products */;
 			projectDirPath = "";
@@ -256,6 +263,7 @@
 				E09454942C13698F00D2E9B3 /* setupView.swift in Sources */,
 				E09454AC2C13EA4300D2E9B3 /* Color.swift in Sources */,
 				E09454B42C14690E00D2E9B3 /* MainViewController.swift in Sources */,
+				E09454B82C146DB100D2E9B3 /* UIViewController + Extension.swift in Sources */,
 				E094549D2C13773F00D2E9B3 /* UILabel + Extension.swift in Sources */,
 				E09454A52C13E75800D2E9B3 /* User.swift in Sources */,
 				E09454922C13694000D2E9B3 /* ReusableIdentifier.swift in Sources */,
@@ -493,6 +501,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		E09454B92C1478A500D2E9B3 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -500,6 +516,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E094548E2C13692200D2E9B3 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		E09454BA2C1478A500D2E9B3 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E09454B92C1478A500D2E9B3 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

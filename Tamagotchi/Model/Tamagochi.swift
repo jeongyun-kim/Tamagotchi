@@ -18,12 +18,12 @@ struct Tamagochi {
     let type: TamagochiType
     let name: String
     // 레벨, 밥, 물방울은 다마고치를 변경하더라도 변경되지 않음 => 같은 값을 공유 
-    static var food: Double = 0
-    static var water: Double = 0
+    static var food: Int = 0
+    static var water: Int = 0
     
     static var level: Int {
-        let expToLevel = Int((food/5 + water/2)/10)
-        
+        let expToLevel = (food/5 + water/2)/10
+
         if expToLevel == 0 {
             return 1
         } else if expToLevel >= 10 {
@@ -43,13 +43,11 @@ struct Tamagochi {
     
     // 레벨에 따라 변하는 이미지
     var imageName: String {
-        var imageString = ""
         if Tamagochi.level == 10 {
-            imageString = "\(type.rawValue)-\(Tamagochi.level-1)"
+            return "\(type.rawValue)-\(Tamagochi.level-1)"
         } else {
-            imageString = "\(type.rawValue)-\(Tamagochi.level)"
+            return "\(type.rawValue)-\(Tamagochi.level)"
         }
-        return type == .etc ? imageString : "noImage"
     }
     
     var desc: String {
@@ -59,6 +57,10 @@ struct Tamagochi {
             case .etc:
                 "아직 준비 중"
         }
+    }
+    
+    var status: String {
+        return "LV\(Tamagochi.level) | 밥알 \(Tamagochi.food)개 | 물방울 \(Tamagochi.water)개"
     }
 }
 

@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class PopupViewController: UIViewController, setupView {
+    
     var tamagochi: Tamagochi?
     
     lazy var containerView: UIView = {
@@ -33,19 +34,12 @@ class PopupViewController: UIViewController, setupView {
         return label
     }()
     
-    lazy var border: UIView = {
-        let view = UIView()
-        view.backgroundColor = Color.fontAndBorderColor
-        return view
-    }()
+    lazy var border: UIView = makeBorder()
     
     lazy var descLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 13)
-        label.textColor = Color.fontAndBorderColor
-        label.textAlignment = .center
         label.text = tamagochi!.desc
-        label.numberOfLines = 0
+        label.configureDescLabel(13)
         return label
     }()
     
@@ -64,11 +58,7 @@ class PopupViewController: UIViewController, setupView {
         return button
     }()
     
-    lazy var stackViewBorder: UIView = {
-        let view = UIView()
-        view.backgroundColor = Color.fontAndBorderColor
-        return view
-    }()
+    lazy var stackViewBorder: UIView = makeBorder()
     
     lazy var horizontalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -78,6 +68,7 @@ class PopupViewController: UIViewController, setupView {
         return stackView
     }()
     
+    // MARK: viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray.withAlphaComponent(0.5)
@@ -144,11 +135,17 @@ class PopupViewController: UIViewController, setupView {
         }
     }
     
+    // MARK: Actions
     @objc func cancelBtnTapped(_ sender: UIButton) {
         dismiss(animated: true)
     }
     
     @objc func selectBtnTapped(_ sender: UIButton) {
-        print(#function)
+        let vc = MainViewController()
+        vc.tamagochi = tamagochi
+        User.selectedTamagochi = tamagochi
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        present(navi, animated: false)
     }
 }

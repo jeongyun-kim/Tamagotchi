@@ -8,6 +8,6 @@
 import Foundation
 
 struct User {
-    static let name: String = "대장"
-    var selectedTamagochi: Tamagochi? = nil
+    static var name: String = "대장"
+    static var selectedTamagochi: Tamagochi? = nil
 }
