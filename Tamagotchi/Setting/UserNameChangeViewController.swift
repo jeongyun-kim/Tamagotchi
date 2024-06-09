@@ -67,15 +67,22 @@ class UserNameChangeViewController: UIViewController, setupView {
         userNameTextField.delegate = self
     }
     
-    @objc func saveBtnTapped(_ sender: UIButton) {
+    @objc func saveBtnTapped() {
         guard let text = userNameTextField.text else { return }
-        if minimumLength <= text.count && text.count <= maxLength {
-            User.name = text
+        // 공백제거하고 남은 문자 개수
+        let removeWhiteSpaceTextCnt = text.components(separatedBy: " ").joined().count
+        // 공백 제거 후 남은 문자가 0개거나 입력한 문자가 2문자 미만일 때
+        if removeWhiteSpaceTextCnt == 0 || text.count < minimumLength  {
+            showToast(message: "닉네임은 2글자 이상 입력해주세용 :) ")
+        } else  {
             ud.userName = text
             navigationController?.popViewController(animated: true)
-        } else {
-            showToast(message: "2글자 이상 입력해주세요 :)")
         }
+    }
+    
+    // 뷰 터치 시 키보드 내리기
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
 
@@ -92,5 +99,10 @@ extension UserNameChangeViewController: UITextFieldDelegate {
         }
         
         return text.count >= maxLength ? false : true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }

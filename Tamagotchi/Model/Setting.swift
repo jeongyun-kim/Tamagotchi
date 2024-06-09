@@ -14,6 +14,7 @@ struct Setting {
 }
 
 struct SettingList {
+    // User.name이 변경됐을 때 반영되도록 연산 프로퍼티 
     static var settingList: [Setting] {
         return [
             Setting(leftIcon: ButtonImageType.userNameChange.rawValue, title: "내 이름 설정하기", desc: "\(User.name)"),

@@ -17,7 +17,7 @@ class HomeViewController: UIViewController, setupView {
     
     var list: [Tamagotchi] = Tamagotchi.list
     
-    var viewType: viewType = .select
+    var viewType: viewType = .select // 기본은 선택하기 / 변경할 때에는 타입 변경해주기
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, setupView {
         }
     }
     
-    func setupCollectionView() {
+    private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -48,7 +48,7 @@ class HomeViewController: UIViewController, setupView {
         collectionView.collectionViewLayout = layout()
     }
     
-    func layout() -> UICollectionViewLayout {
+    private func layout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .estimated(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
@@ -66,6 +66,8 @@ class HomeViewController: UIViewController, setupView {
         view.backgroundColor = .customBackgroundColor
         collectionView.backgroundColor = .customBackgroundColor
         navigationItem.title = "\(viewType.rawValue)"
+        // 그냥 안 보이게하면 변경하기로 왔을 때에도 사라지기 때문에 if문으로 처리
+        if viewType == .select { navigationItem.hidesBackButton = true }
     }
 }
 

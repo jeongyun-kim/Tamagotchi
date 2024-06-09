@@ -81,9 +81,10 @@ class MainViewController: UIViewController, setupView {
     // 다마고치 / 사용자명 변경되면 변경된 데이터 다시 보여주기 위해 viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messages = Message.list // 데이터 갱신 시마다 초기화
+        //messages = Message.list // 데이터 갱신 시마다 초기화
         setupNavigation()
         updateTamagotchi()
+        print(ud.food, ud.water)
     }
     
     func setupHierarchy() {
@@ -206,9 +207,7 @@ class MainViewController: UIViewController, setupView {
     }
     
     func saveData() {
-        Tamagotchi.food = foodCnt // 현재의 food값을 Tamagotchi.food에 넣어주어야 status값을 받아올 수 있음!
         ud.food = foodCnt // UserDefaults에 현재 food값 저장
-        Tamagotchi.water = waterCnt
         ud.water = waterCnt // UserDefault에 현재 water값 저장
     }
     

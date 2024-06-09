@@ -17,10 +17,13 @@ enum TamagotchiType: Int {
 struct Tamagotchi {
     let type: TamagotchiType
     let name: String
-    // 레벨, 밥, 물방울은 다마고치를 변경하더라도 변경되지 않음 => 같은 값을 공유
+    
+    // 레벨, 밥, 물방울은 다마고치를 변경하더라도 변경되지 않음 => 같은 값을 공유(static)
     // UserDefaults에 저장된 값 받아오기(없다면 자연스럽게 0으로)
-    static var food: Int = UserDefaultsManager().food
-    static var water: Int = UserDefaultsManager().water
+    // 저장 프로퍼티로 쓰면 리셋됐을 때 바로 값을 반영하지 못해서 status값이 이전 데이터가 나옴
+    // => 연산 프로퍼티로 사용해주기
+    static var food: Int { return UserDefaultsManager().food }
+    static var water: Int { return UserDefaultsManager().water }
     
     static var level: Int {
         let expToLevel = (food/5 + water/2)/10

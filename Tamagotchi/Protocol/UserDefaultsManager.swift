@@ -43,4 +43,11 @@ struct UserDefaultsManager {
             UserDefaults.standard.setValue(newValue, forKey: "water")
         }
     }
+    
+    func deleteAllDatas() {
+        for key in UserDefaults.standard.dictionaryRepresentation().keys {
+            UserDefaults.standard.removeObject(forKey: key.description)
+        }
+        print(UserDefaults.standard.dictionaryRepresentation())
+    }
 }

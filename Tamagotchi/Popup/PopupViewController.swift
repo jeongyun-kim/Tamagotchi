@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 enum popupViewType: String {
-    case select = "선택하기"
+    case select = "시작하기"
     case change = "변경하기"
 }
 
@@ -99,13 +99,13 @@ class PopupViewController: UIViewController, setupView {
     func setupConstraints() {
         containerView.snp.makeConstraints {
             $0.width.equalTo(view.snp.width).multipliedBy(0.8)
-            $0.height.equalTo(view.snp.height).multipliedBy(0.7)
+            $0.height.equalTo(view.snp.height).multipliedBy(0.5)
             $0.center.equalTo(view.snp.center)
         }
         
         imageView.snp.makeConstraints {
-            $0.size.equalTo(120)
-            $0.top.equalTo(containerView.snp.top).offset(50)
+            $0.size.equalTo(containerView.snp.width).multipliedBy(0.4)
+            $0.top.equalTo(containerView.snp.top).offset(30)
             $0.centerX.equalTo(containerView.snp.centerX)
         }
         
@@ -117,7 +117,7 @@ class PopupViewController: UIViewController, setupView {
         }
         
         border.snp.makeConstraints {
-            $0.width.equalTo(containerView.snp.width).multipliedBy(0.7)
+            $0.width.equalTo(containerView.snp.width).multipliedBy(0.8)
             $0.centerX.equalTo(containerView.snp.centerX)
             $0.top.equalTo(nameLabel.snp.bottom).offset(30)
             $0.height.equalTo(1)
@@ -131,7 +131,7 @@ class PopupViewController: UIViewController, setupView {
         
         stackViewBorder.snp.makeConstraints {
             $0.height.equalTo(0.5)
-            $0.top.lessThanOrEqualTo(descLabel.snp.bottom).offset(24)
+            $0.top.greaterThanOrEqualTo(descLabel.snp.bottom).offset(24)
             $0.horizontalEdges.equalTo(containerView)
         }
         

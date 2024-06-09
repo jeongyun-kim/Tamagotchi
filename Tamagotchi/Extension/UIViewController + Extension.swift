@@ -54,6 +54,7 @@ extension UIViewController {
         return button
     }
     
+    // MARK: Show
     func showToast(message: String) {
         var toastStyle = ToastStyle()
         toastStyle.backgroundColor = .customTintColor

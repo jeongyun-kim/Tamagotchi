@@ -15,7 +15,7 @@ class SettingTableViewCell: UITableViewCell{
         configureLayout()
     }
     
-    func configureLayout() {
+    private func configureLayout() {
         self.backgroundColor = .clear
         self.textLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         self.detailTextLabel?.font = UIFont.systemFont(ofSize: 13)

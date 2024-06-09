@@ -65,6 +65,20 @@ class SettingViewController: UIViewController, setupView {
         navigationItem.title = "설정"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.customTintColor]
     }
+    
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let confirm = UIAlertAction(title: "확인", style: .default) { _ in
+            UserDefaultsManager().deleteAllDatas() // 데이터 초기화
+            let vc = HomeViewController() // 홈뷰 다시 불러오기 
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        present(alert, animated: true)
+    }
 }
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
@@ -84,9 +98,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(UserNameChangeViewController(), animated: true)
         case 1:
             let vc = HomeViewController()
-            vc.viewType = .change
+            vc.viewType = .change // 변경하기니까 홈뷰를 변경하기로 타입 변경
             navigationController?.pushViewController(vc, animated: true)
-        case 2: print("2")
+        case 2: 
+            showAlert(title: "데이터 초기화", message: "정말 처음부터 다시 시작하시겠어요?")
         default: break
         }
     }

@@ -99,6 +99,7 @@
 		E09454722C13622C00D2E9B3 /* Tamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */,
 				E09454952C1369ED00D2E9B3 /* Protocol */,
 				E09454A62C13E9E400D2E9B3 /* Extension */,
 				E094548B2C13633000D2E9B3 /* Model */,
@@ -169,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				E09454B32C14690E00D2E9B3 /* MainViewController.swift */,
-				E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
