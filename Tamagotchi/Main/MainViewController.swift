@@ -81,7 +81,7 @@ class MainViewController: UIViewController, setupView {
     // 다마고치 / 사용자명 변경되면 변경된 데이터 다시 보여주기 위해 viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //messages = Message.list // 데이터 갱신 시마다 초기화
+        messages = Message.list // 데이터 갱신 시마다 초기화
         setupNavigation()
         updateTamagotchi()
         print(ud.food, ud.water)
