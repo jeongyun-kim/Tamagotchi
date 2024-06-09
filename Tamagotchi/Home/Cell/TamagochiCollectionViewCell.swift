@@ -27,7 +27,7 @@ class TamagochiCollectionViewCell: UICollectionViewCell, setupView {
         super.init(frame: frame)
         setupHierarchy()
         setupConstraints()
-        self.backgroundColor = Color.backgroundColor
+        self.backgroundColor = .customBackgroundColor
     }
     
     func setupHierarchy() {

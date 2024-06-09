@@ -11,18 +11,20 @@ import Toast
 extension UIViewController {
     func makeBorder(alpha: CGFloat = 1) -> UIView {
         let view = UIView()
-        view.backgroundColor = Color.fontAndBorderColor.withAlphaComponent(alpha)
+        view.backgroundColor = .customTintColor.withAlphaComponent(alpha)
         return view
     }
     
-    func makeTextField(placeholder: String) -> UITextField {
+    func makeTextField(placeholder: String, isMainView: Bool) -> UITextField {
         let textField = UITextField()
         textField.font = UIFont.systemFont(ofSize: 13)
         textField.placeholder = placeholder
-        textField.textAlignment = .center
         textField.borderStyle = .none
-        textField.textColor = Color.fontAndBorderColor
-        textField.keyboardType = .numberPad
+        textField.textColor = .customTintColor
+        if isMainView {
+            textField.textAlignment = .center
+            textField.keyboardType = .numberPad
+        }
         return textField
     }
     
@@ -36,16 +38,16 @@ extension UIViewController {
         config.imagePadding = 2
         button.configuration = config
         
-        button.tintColor = Color.fontAndBorderColor
+        button.tintColor = .customTintColor
     
         button.setImage(UIImage(systemName: type.rawValue), for: .normal)
         
         let attributedTitle = NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13, weight: .bold)])
         button.setAttributedTitle(attributedTitle, for: .normal)
-        button.setTitleColor(Color.fontAndBorderColor, for: .normal)
+        button.setTitleColor(.customTintColor, for: .normal)
         button.titleLabel?.configureDescLabel(13, .bold)
         
-        button.layer.borderColor = Color.fontAndBorderColor.cgColor
+        button.layer.borderColor = UIColor.customTintColor.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 6
         
@@ -54,7 +56,7 @@ extension UIViewController {
     
     func showToast(message: String) {
         var toastStyle = ToastStyle()
-        toastStyle.backgroundColor = Color.fontAndBorderColor
+        toastStyle.backgroundColor = .customTintColor
         toastStyle.messageColor = .white
         self.view.makeToast(message, position: .center, style: toastStyle)
     }

@@ -10,4 +10,7 @@ import Foundation
 enum ButtonImageType: String {
     case food = "drop.circle"
     case water = "leaf.circle"
+    case userNameChange = "pencil"
+    case tamagotchiChange = "moon.fill"
+    case reset = "arrow.clockwise"
 }

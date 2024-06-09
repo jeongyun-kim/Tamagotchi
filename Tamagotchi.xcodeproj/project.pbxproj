@@ -21,7 +21,6 @@
 		E094549D2C13773F00D2E9B3 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094549C2C13773F00D2E9B3 /* UILabel + Extension.swift */; };
 		E094549F2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094549E2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift */; };
 		E09454A52C13E75800D2E9B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454A42C13E75800D2E9B3 /* User.swift */; };
-		E09454AC2C13EA4300D2E9B3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454AB2C13EA4300D2E9B3 /* Color.swift */; };
 		E09454AE2C13EED400D2E9B3 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454AD2C13EED400D2E9B3 /* PopupViewController.swift */; };
 		E09454B02C14650100D2E9B3 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */; };
 		E09454B22C14678500D2E9B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454B12C14678500D2E9B3 /* Message.swift */; };
@@ -30,6 +29,11 @@
 		E09454BB2C1478A500D2E9B3 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E09454BA2C1478A500D2E9B3 /* Toast */; };
 		E09454BD2C14991B00D2E9B3 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454BC2C14991B00D2E9B3 /* UserDefaultsManager.swift */; };
 		E09454BF2C155A9800D2E9B3 /* ButtonImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */; };
+		E09454C22C155E2E00D2E9B3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454C12C155E2E00D2E9B3 /* SettingViewController.swift */; };
+		E09454C52C1564C900D2E9B3 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454C42C1564C900D2E9B3 /* SettingTableViewCell.swift */; };
+		E09454C72C15667000D2E9B3 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454C62C15667000D2E9B3 /* Setting.swift */; };
+		E09454CD2C156D2A00D2E9B3 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454CC2C156D2A00D2E9B3 /* UIColor + Extension.swift */; };
+		E09454D12C15733C00D2E9B3 /* UserNameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454D02C15733C00D2E9B3 /* UserNameChangeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +52,6 @@
 		E094549C2C13773F00D2E9B3 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		E094549E2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagochiCollectionViewCell.swift; sourceTree = "<group>"; };
 		E09454A42C13E75800D2E9B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E09454AB2C13EA4300D2E9B3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		E09454AD2C13EED400D2E9B3 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		E09454B12C14678500D2E9B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -56,6 +59,11 @@
 		E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		E09454BC2C14991B00D2E9B3 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImageType.swift; sourceTree = "<group>"; };
+		E09454C12C155E2E00D2E9B3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E09454C42C1564C900D2E9B3 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		E09454C62C15667000D2E9B3 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		E09454CC2C156D2A00D2E9B3 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		E09454D02C15733C00D2E9B3 /* UserNameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameChangeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +99,13 @@
 		E09454722C13622C00D2E9B3 /* Tamagotchi */ = {
 			isa = PBXGroup;
 			children = (
-				E09454AA2C13EA3600D2E9B3 /* Components */,
 				E09454952C1369ED00D2E9B3 /* Protocol */,
 				E09454A62C13E9E400D2E9B3 /* Extension */,
 				E094548B2C13633000D2E9B3 /* Model */,
 				E09454962C136DB200D2E9B3 /* Home */,
 				E09454B62C14692100D2E9B3 /* Popup */,
 				E09454B52C14691200D2E9B3 /* Main */,
+				E09454C02C155E2200D2E9B3 /* Setting */,
 				E09454732C13622C00D2E9B3 /* AppDelegate.swift */,
 				E09454752C13622C00D2E9B3 /* SceneDelegate.swift */,
 				E094547C2C13622D00D2E9B3 /* Assets.xcassets */,
@@ -113,6 +121,7 @@
 				E094548C2C13639000D2E9B3 /* Tamagotchi.swift */,
 				E09454A42C13E75800D2E9B3 /* User.swift */,
 				E09454B12C14678500D2E9B3 /* Message.swift */,
+				E09454C62C15667000D2E9B3 /* Setting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,16 +160,9 @@
 				E094549C2C13773F00D2E9B3 /* UILabel + Extension.swift */,
 				E09454AF2C14650100D2E9B3 /* UIButton + Extension.swift */,
 				E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */,
+				E09454CC2C156D2A00D2E9B3 /* UIColor + Extension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		E09454AA2C13EA3600D2E9B3 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				E09454AB2C13EA4300D2E9B3 /* Color.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		E09454B52C14691200D2E9B3 /* Main */ = {
@@ -178,6 +180,24 @@
 				E09454AD2C13EED400D2E9B3 /* PopupViewController.swift */,
 			);
 			path = Popup;
+			sourceTree = "<group>";
+		};
+		E09454C02C155E2200D2E9B3 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E09454C32C1564BF00D2E9B3 /* Cell */,
+				E09454C12C155E2E00D2E9B3 /* SettingViewController.swift */,
+				E09454D02C15733C00D2E9B3 /* UserNameChangeViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		E09454C32C1564BF00D2E9B3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E09454C42C1564C900D2E9B3 /* SettingTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,20 +281,24 @@
 			files = (
 				E094549F2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift in Sources */,
 				E09454B02C14650100D2E9B3 /* UIButton + Extension.swift in Sources */,
+				E09454D12C15733C00D2E9B3 /* UserNameChangeViewController.swift in Sources */,
 				E09454BD2C14991B00D2E9B3 /* UserDefaultsManager.swift in Sources */,
 				E09454BF2C155A9800D2E9B3 /* ButtonImageType.swift in Sources */,
 				E09454742C13622C00D2E9B3 /* AppDelegate.swift in Sources */,
 				E09454762C13622C00D2E9B3 /* SceneDelegate.swift in Sources */,
+				E09454C52C1564C900D2E9B3 /* SettingTableViewCell.swift in Sources */,
 				E094548A2C13632E00D2E9B3 /* HomeViewController.swift in Sources */,
 				E094548D2C13639000D2E9B3 /* Tamagotchi.swift in Sources */,
 				E094549B2C13752600D2E9B3 /* UIImageView + Extension.swift in Sources */,
 				E09454942C13698F00D2E9B3 /* setupView.swift in Sources */,
-				E09454AC2C13EA4300D2E9B3 /* Color.swift in Sources */,
+				E09454C72C15667000D2E9B3 /* Setting.swift in Sources */,
 				E09454B42C14690E00D2E9B3 /* MainViewController.swift in Sources */,
 				E09454B82C146DB100D2E9B3 /* UIViewController + Extension.swift in Sources */,
+				E09454CD2C156D2A00D2E9B3 /* UIColor + Extension.swift in Sources */,
 				E094549D2C13773F00D2E9B3 /* UILabel + Extension.swift in Sources */,
 				E09454A52C13E75800D2E9B3 /* User.swift in Sources */,
 				E09454922C13694000D2E9B3 /* ReusableIdentifier.swift in Sources */,
+				E09454C22C155E2E00D2E9B3 /* SettingViewController.swift in Sources */,
 				E09454AE2C13EED400D2E9B3 /* PopupViewController.swift in Sources */,
 				E09454B22C14678500D2E9B3 /* Message.swift in Sources */,
 			);

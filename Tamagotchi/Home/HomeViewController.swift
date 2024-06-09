@@ -8,16 +8,16 @@
 import UIKit
 import SnapKit
 
-enum viewType {
-    case select
-    case change
+enum viewType: String {
+    case select = "다마고치 선택하기"
+    case change = "다마고치 변경하기"
 }
 
 class HomeViewController: UIViewController, setupView {
     
     var list: [Tamagotchi] = Tamagotchi.list
     
-    var type: viewType = .select
+    var viewType: viewType = .select
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
@@ -63,14 +63,9 @@ class HomeViewController: UIViewController, setupView {
     }
     
     func setupUI() {
-        view.backgroundColor = Color.backgroundColor
-        collectionView.backgroundColor = Color.backgroundColor
-        switch type {
-        case .select:
-            navigationItem.title = "다마고치 선택하기"
-        case .change:
-            navigationItem.title = "다마고치 변경하기"
-        }
+        view.backgroundColor = .customBackgroundColor
+        collectionView.backgroundColor = .customBackgroundColor
+        navigationItem.title = "\(viewType.rawValue)"
     }
 }
 
@@ -89,7 +84,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         print(indexPath.row)
         let vc = PopupViewController()
         vc.tamagotchi = list[indexPath.row]
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: true)
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .overCurrentContext
+        present(navi, animated: true)
     }
 }

@@ -8,13 +8,20 @@
 import UIKit
 import SnapKit
 
+enum popupViewType: String {
+    case select = "선택하기"
+    case change = "변경하기"
+}
+
 class PopupViewController: UIViewController, setupView {
     
     var tamagotchi: Tamagotchi?
     
+    var type: popupViewType = .select
+    
     lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = Color.backgroundColor
+        view.backgroundColor = .customBackgroundColor
         view.layer.cornerRadius = 8
         return view
     }()
@@ -22,7 +29,7 @@ class PopupViewController: UIViewController, setupView {
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = Color.backgroundColor
+        imageView.backgroundColor = .customBackgroundColor
         imageView.image = UIImage(named: tamagotchi!.mainImageName)
         return imageView
     }()
@@ -46,14 +53,14 @@ class PopupViewController: UIViewController, setupView {
     lazy var cancelBtn: UIButton = {
         let button = UIButton()
         button.configurePopupButtons("취소하기", cornerRadiusAt: .layerMinXMaxYCorner)
-        button.backgroundColor = Color.fontAndBorderColor.withAlphaComponent(0.2)
+        button.backgroundColor = .customTintColor.withAlphaComponent(0.2)
         button.addTarget(self, action: #selector(cancelBtnTapped), for: .touchUpInside)
         return button
     }()
     
     lazy var selectBtn: UIButton = {
         let button = UIButton()
-        button.configurePopupButtons("선택하기", cornerRadiusAt: .layerMaxXMaxYCorner)
+        button.configurePopupButtons(type.rawValue, cornerRadiusAt: .layerMaxXMaxYCorner)
         button.addTarget(self, action: #selector(selectBtnTapped), for: .touchUpInside)
         return button
     }()
@@ -147,10 +154,8 @@ class PopupViewController: UIViewController, setupView {
         
         var ud = UserDefaultsManager()
         ud.userName = User.name // UserDefaults에 현재 사용자명 저장
-        ud.selectedTamagotchiRawValue = tamagotchi!.type.rawValue // UserDefaults에 현재 사용자가 선택한 다마고치의 rawValue(1부터) 저장 
-        
-        let navi = UINavigationController(rootViewController: vc)
-        navi.modalPresentationStyle = .fullScreen
-        present(navi, animated: false)
+        ud.selectedTamagotchiRawValue = tamagotchi!.type.rawValue // UserDefaults에 현재 사용자가 선택한 다마고치의 rawValue(1부터) 저장
+    
+        navigationController?.pushViewController(vc, animated: false)
     }
 }

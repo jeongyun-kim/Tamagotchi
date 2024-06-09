@@ -13,7 +13,7 @@ class MainViewController: UIViewController, setupView {
     
     var ud = UserDefaultsManager()
     
-    var tamagotchi: Tamagotchi?
+    var tamagotchi = User.selectedTamagotchi
 
     lazy var foodCnt = ud.food {
         didSet {
@@ -56,13 +56,13 @@ class MainViewController: UIViewController, setupView {
         return label
     }()
     
-    lazy var foodTextField: UITextField = makeTextField(placeholder: "밥주세용")
+    lazy var foodTextField: UITextField = makeTextField(placeholder: "밥주세용", isMainView: true)
     
     lazy var foodTextFieldBorder = makeBorder()
     
     lazy var foodBtn: UIButton = makeButton("밥먹기", type: .food)
     
-    lazy var waterTextField: UITextField = makeTextField(placeholder: "물주세용")
+    lazy var waterTextField: UITextField = makeTextField(placeholder: "물주세용", isMainView: true)
     
     lazy var waterFieldBorder = makeBorder()
     
@@ -79,6 +79,7 @@ class MainViewController: UIViewController, setupView {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupNavigation()
         updateTamagotchi()
     }
     
@@ -171,13 +172,18 @@ class MainViewController: UIViewController, setupView {
     
     
     // MARK: UI
-    func setupUI() {
-        view.backgroundColor = Color.backgroundColor
+    func setupNavigation() {
         navigationItem.title = "\(User.name)님의 다마고치"
-        let settingItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: nil)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.customTintColor]
+        let settingItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingBtnTapped))
         navigationItem.rightBarButtonItem = settingItem
-        navigationController?.navigationBar.tintColor = Color.fontAndBorderColor
-        
+        navigationController?.navigationBar.tintColor = .customTintColor
+        navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.backButtonTitle = ""
+    }
+    
+    func setupUI() {
+        view.backgroundColor = .customBackgroundColor
         foodTextField.delegate = self
         waterTextField.delegate = self
     }
@@ -236,6 +242,11 @@ class MainViewController: UIViewController, setupView {
             }
             waterTextField.text = ""
         }
+    }
+    
+    @objc func settingBtnTapped(_ sender: UIButton) {
+        let vc = SettingViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
