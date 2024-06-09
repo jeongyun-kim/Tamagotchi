@@ -82,7 +82,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             navigationController?.pushViewController(UserNameChangeViewController(), animated: true)
-        case 1: print("1")
+        case 1:
+            let vc = HomeViewController()
+            vc.viewType = .change
+            navigationController?.pushViewController(vc, animated: true)
         case 2: print("2")
         default: break
         }

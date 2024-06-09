@@ -81,9 +81,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
         let vc = PopupViewController()
         vc.tamagotchi = list[indexPath.row]
+        
+        // 현재 뷰가 선택하기라면 팝업뷰도 선택하기 / 현재 뷰가 변경하기라면 팝업뷰도 변경하기
+        let popupViewType: popupViewType = viewType == .select ? .select : .change
+        vc.popupViewType = popupViewType
+        
         let navi = UINavigationController(rootViewController: vc)
         navi.modalPresentationStyle = .overCurrentContext
         present(navi, animated: true)

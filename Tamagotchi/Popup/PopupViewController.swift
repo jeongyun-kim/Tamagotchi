@@ -15,9 +15,9 @@ enum popupViewType: String {
 
 class PopupViewController: UIViewController, setupView {
     
-    var tamagotchi: Tamagotchi?
+    lazy var tamagotchi: Tamagotchi? = nil
     
-    var type: popupViewType = .select
+    lazy var popupViewType: popupViewType = .select
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -60,7 +60,7 @@ class PopupViewController: UIViewController, setupView {
     
     lazy var selectBtn: UIButton = {
         let button = UIButton()
-        button.configurePopupButtons(type.rawValue, cornerRadiusAt: .layerMaxXMaxYCorner)
+        button.configurePopupButtons(popupViewType.rawValue, cornerRadiusAt: .layerMaxXMaxYCorner)
         button.addTarget(self, action: #selector(selectBtnTapped), for: .touchUpInside)
         return button
     }()
@@ -149,8 +149,7 @@ class PopupViewController: UIViewController, setupView {
     
     @objc func selectBtnTapped(_ sender: UIButton) {
         let vc = MainViewController()
-        vc.tamagotchi = tamagotchi
-        User.selectedTamagotchi = tamagotchi
+        vc.tamagotchi = tamagotchi // 사용자가 선택한 다마고치 세팅
         
         var ud = UserDefaultsManager()
         ud.userName = User.name // UserDefaults에 현재 사용자명 저장

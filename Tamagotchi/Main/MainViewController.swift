@@ -11,18 +11,19 @@ import Toast
 
 class MainViewController: UIViewController, setupView {
     
-    var ud = UserDefaultsManager()
+    lazy var ud = UserDefaultsManager()
     
-    var tamagotchi = User.selectedTamagotchi
+    // 사용자가 현재 선택한 다마고치 받아오기
+    lazy var tamagotchi: Tamagotchi? = nil
 
-    lazy var foodCnt = ud.food {
+    lazy var foodCnt = ud.food { // 밥양 가져오기
         didSet {
             saveData()
             updateTamagotchi()
         }
     }
     
-    lazy var waterCnt = ud.water {
+    lazy var waterCnt = ud.water { // 물양 가져오기 
         didSet {
             saveData()
             updateTamagotchi()
@@ -30,7 +31,7 @@ class MainViewController: UIViewController, setupView {
     }
     
     // 다마고치가 말하는 내용들
-    let messages = Message.list
+    lazy var messages: [Message] = Message.list
     
     lazy var naviBorder: UIView = makeBorder(alpha: 0.2)
     
@@ -77,8 +78,10 @@ class MainViewController: UIViewController, setupView {
         addTargets()
     }
     
+    // 다마고치 / 사용자명 변경되면 변경된 데이터 다시 보여주기 위해 viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        messages = Message.list // 데이터 갱신 시마다 초기화
         setupNavigation()
         updateTamagotchi()
     }
