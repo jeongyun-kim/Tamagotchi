@@ -9,6 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    let ud = UserDefaultsManager()
+    
     var window: UIWindow?
 
 
@@ -16,9 +18,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         // SceneDelegate의 프로퍼티에 설정
         window = UIWindow(windowScene: windowScene)
-        let mainView = UINavigationController(rootViewController: HomeViewController())
-        //let mainView = UINavigationController(rootViewController: MainViewController())
-        // 처음 보여질 화면(=탭바)을 root로 설정하고 보여주기
+        
+        var mainView = UINavigationController(rootViewController: HomeViewController())
+        
+        // Tamagotchi 각 모델의 rawValue는 1부터이므로 0이 나오면 저장된 데이터가 없는 것
+        // 저장된 데이터가 있다면 Main vc 불러오고 다마고치 데이터 넣어주기
+        if UserDefaultsManager().selectedTamagotchiRawValue != 0 {
+            let vc = MainViewController()
+            vc.tamagotchi = Tamagotchi.list[ud.selectedTamagotchiRawValue-1]
+            mainView = UINavigationController(rootViewController: vc)
+        }
+        
+        // 처음 보여질 화면을 root로 설정하고 보여주기
         window?.rootViewController = mainView
         window?.makeKeyAndVisible()
     }

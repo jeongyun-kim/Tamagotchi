@@ -15,7 +15,7 @@ enum viewType {
 
 class HomeViewController: UIViewController, setupView {
     
-    var list: [Tamagochi] = Tamagochi.list
+    var list: [Tamagotchi] = Tamagotchi.list
     
     var type: viewType = .select
     
@@ -88,10 +88,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
         let vc = PopupViewController()
-        vc.tamagochi = list[indexPath.row]
+        vc.tamagotchi = list[indexPath.row]
         vc.modalPresentationStyle = .overCurrentContext
-        //let navi = UINavigationController(rootViewController: vc)
-        //navi.modalPresentationStyle = .overCurrentContext
         present(vc, animated: true)
     }
 }

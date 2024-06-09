@@ -9,29 +9,27 @@ import UIKit
 import SnapKit
 import Toast
 
-enum ButtonImageType: String {
-    case food = "drop.circle"
-    case water = "leaf.circle"
-}
-
 class MainViewController: UIViewController, setupView {
     
-    var tamagochi: Tamagochi?
+    var ud = UserDefaultsManager()
+    
+    var tamagotchi: Tamagotchi?
 
-    var foodCnt = Tamagochi.food {
+    lazy var foodCnt = ud.food {
         didSet {
-            Tamagochi.food = foodCnt
-            updateTamagochi()
+            saveData()
+            updateTamagotchi()
         }
     }
     
-    var waterCnt = Tamagochi.water {
+    lazy var waterCnt = ud.water {
         didSet {
-            Tamagochi.water = waterCnt
-            updateTamagochi()
+            saveData()
+            updateTamagotchi()
         }
     }
     
+    // 다마고치가 말하는 내용들
     let messages = Message.list
     
     lazy var naviBorder: UIView = makeBorder(alpha: 0.2)
@@ -70,7 +68,6 @@ class MainViewController: UIViewController, setupView {
     
     lazy var waterBtn = makeButton("물먹기", type: .water)
     
-    
     // MARK: viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,12 +75,11 @@ class MainViewController: UIViewController, setupView {
         setupConstraints()
         setupUI()
         addTargets()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateTamagochi()
+        updateTamagotchi()
     }
     
     func setupHierarchy() {
@@ -173,6 +169,7 @@ class MainViewController: UIViewController, setupView {
         }
     }
     
+    
     // MARK: UI
     func setupUI() {
         view.backgroundColor = Color.backgroundColor
@@ -190,13 +187,20 @@ class MainViewController: UIViewController, setupView {
         waterBtn.addTarget(self, action: #selector(waterBtnTapped), for: .touchUpInside)
     }
     
-    func updateTamagochi() {
+    func updateTamagotchi() {
         bubbleImageView.image = UIImage(named: "bubble")
         bubbleLabel.text = messages.randomElement()?.message
-        guard let image = tamagochi?.imageName else { return }
+        guard let image = tamagotchi?.imageName else { return }
         tamagochiImageView.image = UIImage(named: image)
-        tamagochiNameLabel.text = tamagochi?.name
-        tamagochiStatusLabel.text = tamagochi?.status
+        tamagochiNameLabel.text = tamagotchi?.name
+        tamagochiStatusLabel.text = tamagotchi?.status
+    }
+    
+    func saveData() {
+        Tamagotchi.food = foodCnt // 현재의 food값을 Tamagotchi.food에 넣어주어야 status값을 받아올 수 있음!
+        ud.food = foodCnt // UserDefaults에 현재 food값 저장
+        Tamagotchi.water = waterCnt
+        ud.water = waterCnt // UserDefault에 현재 water값 저장
     }
     
     // MARK: Action

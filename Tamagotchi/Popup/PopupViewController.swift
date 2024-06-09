@@ -10,7 +10,7 @@ import SnapKit
 
 class PopupViewController: UIViewController, setupView {
     
-    var tamagochi: Tamagochi?
+    var tamagotchi: Tamagotchi?
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -23,14 +23,14 @@ class PopupViewController: UIViewController, setupView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = Color.backgroundColor
-        imageView.image = UIImage(named: tamagochi!.mainImageName)
+        imageView.image = UIImage(named: tamagotchi!.mainImageName)
         return imageView
     }()
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.configureNameLabel(14, .bold)
-        label.text = tamagochi!.name
+        label.text = tamagotchi!.name
         return label
     }()
     
@@ -38,7 +38,7 @@ class PopupViewController: UIViewController, setupView {
     
     lazy var descLabel: UILabel = {
         let label = UILabel()
-        label.text = tamagochi!.desc
+        label.text = tamagotchi!.desc
         label.configureDescLabel(13)
         return label
     }()
@@ -92,7 +92,7 @@ class PopupViewController: UIViewController, setupView {
     func setupConstraints() {
         containerView.snp.makeConstraints {
             $0.width.equalTo(view.snp.width).multipliedBy(0.8)
-            $0.height.equalTo(view.snp.height).multipliedBy(0.5)
+            $0.height.equalTo(view.snp.height).multipliedBy(0.7)
             $0.center.equalTo(view.snp.center)
         }
         
@@ -142,8 +142,13 @@ class PopupViewController: UIViewController, setupView {
     
     @objc func selectBtnTapped(_ sender: UIButton) {
         let vc = MainViewController()
-        vc.tamagochi = tamagochi
-        User.selectedTamagochi = tamagochi
+        vc.tamagotchi = tamagotchi
+        User.selectedTamagotchi = tamagotchi
+        
+        var ud = UserDefaultsManager()
+        ud.userName = User.name // UserDefaults에 현재 사용자명 저장
+        ud.selectedTamagotchiRawValue = tamagotchi!.type.rawValue // UserDefaults에 현재 사용자가 선택한 다마고치의 rawValue(1부터) 저장 
+        
         let navi = UINavigationController(rootViewController: vc)
         navi.modalPresentationStyle = .fullScreen
         present(navi, animated: false)

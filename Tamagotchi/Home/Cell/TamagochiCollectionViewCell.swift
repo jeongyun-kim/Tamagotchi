@@ -56,7 +56,7 @@ class TamagochiCollectionViewCell: UICollectionViewCell, setupView {
         }
     }
     
-    func configureCell(_ data: Tamagochi) {
+    func configureCell(_ data: Tamagotchi) {
         imageView.image = UIImage(named: data.mainImageName)
         nameLabel.text = data.name
     }

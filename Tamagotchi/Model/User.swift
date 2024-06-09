@@ -8,6 +8,8 @@
 import Foundation
 
 struct User {
-    static var name: String = "대장"
-    static var selectedTamagochi: Tamagochi? = nil
+    // UserDefaults로부터 저장된 사용자명 받아오기
+    // 아직 저장 전이라면 default값 "대장" 받아옴 
+    static var name: String = UserDefaultsManager().userName
+    static var selectedTamagotchi: Tamagotchi? = nil
 }

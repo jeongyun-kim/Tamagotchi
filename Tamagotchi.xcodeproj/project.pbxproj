@@ -13,7 +13,7 @@
 		E09454802C13622D00D2E9B3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E094547F2C13622D00D2E9B3 /* Base */; };
 		E09454882C13624300D2E9B3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E09454872C13624300D2E9B3 /* .gitignore */; };
 		E094548A2C13632E00D2E9B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454892C13632E00D2E9B3 /* HomeViewController.swift */; };
-		E094548D2C13639000D2E9B3 /* Tamagochi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094548C2C13639000D2E9B3 /* Tamagochi.swift */; };
+		E094548D2C13639000D2E9B3 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E094548C2C13639000D2E9B3 /* Tamagotchi.swift */; };
 		E09454902C13692200D2E9B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E094548F2C13692200D2E9B3 /* SnapKit */; };
 		E09454922C13694000D2E9B3 /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454912C13694000D2E9B3 /* ReusableIdentifier.swift */; };
 		E09454942C13698F00D2E9B3 /* setupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454932C13698F00D2E9B3 /* setupView.swift */; };
@@ -28,6 +28,8 @@
 		E09454B42C14690E00D2E9B3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454B32C14690E00D2E9B3 /* MainViewController.swift */; };
 		E09454B82C146DB100D2E9B3 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */; };
 		E09454BB2C1478A500D2E9B3 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E09454BA2C1478A500D2E9B3 /* Toast */; };
+		E09454BD2C14991B00D2E9B3 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454BC2C14991B00D2E9B3 /* UserDefaultsManager.swift */; };
+		E09454BF2C155A9800D2E9B3 /* ButtonImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +41,7 @@
 		E09454812C13622D00D2E9B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E09454872C13624300D2E9B3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E09454892C13632E00D2E9B3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E094548C2C13639000D2E9B3 /* Tamagochi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagochi.swift; sourceTree = "<group>"; };
+		E094548C2C13639000D2E9B3 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 		E09454912C13694000D2E9B3 /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
 		E09454932C13698F00D2E9B3 /* setupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupView.swift; sourceTree = "<group>"; };
 		E094549A2C13752600D2E9B3 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		E09454B12C14678500D2E9B3 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E09454B32C14690E00D2E9B3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		E09454BC2C14991B00D2E9B3 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +110,7 @@
 		E094548B2C13633000D2E9B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E094548C2C13639000D2E9B3 /* Tamagochi.swift */,
+				E094548C2C13639000D2E9B3 /* Tamagotchi.swift */,
 				E09454A42C13E75800D2E9B3 /* User.swift */,
 				E09454B12C14678500D2E9B3 /* Message.swift */,
 			);
@@ -118,6 +122,7 @@
 			children = (
 				E09454932C13698F00D2E9B3 /* setupView.swift */,
 				E09454912C13694000D2E9B3 /* ReusableIdentifier.swift */,
+				E09454BC2C14991B00D2E9B3 /* UserDefaultsManager.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E09454B32C14690E00D2E9B3 /* MainViewController.swift */,
+				E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -255,10 +261,12 @@
 			files = (
 				E094549F2C13D74000D2E9B3 /* TamagochiCollectionViewCell.swift in Sources */,
 				E09454B02C14650100D2E9B3 /* UIButton + Extension.swift in Sources */,
+				E09454BD2C14991B00D2E9B3 /* UserDefaultsManager.swift in Sources */,
+				E09454BF2C155A9800D2E9B3 /* ButtonImageType.swift in Sources */,
 				E09454742C13622C00D2E9B3 /* AppDelegate.swift in Sources */,
 				E09454762C13622C00D2E9B3 /* SceneDelegate.swift in Sources */,
 				E094548A2C13632E00D2E9B3 /* HomeViewController.swift in Sources */,
-				E094548D2C13639000D2E9B3 /* Tamagochi.swift in Sources */,
+				E094548D2C13639000D2E9B3 /* Tamagotchi.swift in Sources */,
 				E094549B2C13752600D2E9B3 /* UIImageView + Extension.swift in Sources */,
 				E09454942C13698F00D2E9B3 /* setupView.swift in Sources */,
 				E09454AC2C13EA4300D2E9B3 /* Color.swift in Sources */,
@@ -338,7 +346,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -395,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
