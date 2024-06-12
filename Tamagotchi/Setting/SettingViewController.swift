@@ -69,12 +69,12 @@ class SettingViewController: UIViewController, setupView {
     
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let confirm = UIAlertAction(title: "확인", style: .default) { _ in
+        let confirm = UIAlertAction(title: AlertActionTitle.confirm.rawValue, style: .default) { _ in
             UserDefaultsManager().deleteAllDatas() // 데이터 초기화
             let vc = HomeViewController() // 홈뷰 다시 불러오기 
             self.navigationController?.pushViewController(vc, animated: false)
         }
-        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let cancel = UIAlertAction(title: AlertActionTitle.cancel.rawValue, style: .cancel)
         alert.addAction(confirm)
         alert.addAction(cancel)
         present(alert, animated: true)

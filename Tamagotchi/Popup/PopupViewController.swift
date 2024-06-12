@@ -8,16 +8,12 @@
 import UIKit
 import SnapKit
 
-enum popupViewType: String {
-    case select = "시작하기"
-    case change = "변경하기"
-}
 
 class PopupViewController: UIViewController, setupView {
     
     lazy var tamagotchi: Tamagotchi? = nil
     
-    lazy var popupViewType: popupViewType = .select
+    lazy var popupViewType: PopupViewType = .select
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -52,7 +48,7 @@ class PopupViewController: UIViewController, setupView {
     
     lazy var cancelBtn: UIButton = {
         let button = UIButton()
-        button.configurePopupButtons("취소하기", cornerRadiusAt: .layerMinXMaxYCorner)
+        button.configurePopupButtons(ButtonTitle.cancel.rawValue, cornerRadiusAt: .layerMinXMaxYCorner)
         button.backgroundColor = .customTintColor.withAlphaComponent(0.2)
         button.addTarget(self, action: #selector(cancelBtnTapped), for: .touchUpInside)
         return button

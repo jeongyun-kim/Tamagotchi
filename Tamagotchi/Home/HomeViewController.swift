@@ -8,16 +8,13 @@
 import UIKit
 import SnapKit
 
-enum viewType: String {
-    case select = "다마고치 선택하기"
-    case change = "다마고치 변경하기"
-}
+
 
 class HomeViewController: UIViewController, setupView {
     
     var list: [Tamagotchi] = Tamagotchi.list
     
-    var viewType: viewType = .select // 기본은 선택하기 / 변경할 때에는 타입 변경해주기
+    var viewType: MainViewType = .select // 기본은 선택하기 / 변경할 때에는 타입 변경해주기
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
@@ -87,7 +84,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         vc.tamagotchi = list[indexPath.row]
         
         // 현재 뷰가 선택하기라면 팝업뷰도 선택하기 / 현재 뷰가 변경하기라면 팝업뷰도 변경하기
-        let popupViewType: popupViewType = viewType == .select ? .select : .change
+        let popupViewType: PopupViewType = viewType == .select ? .select : .change
         vc.popupViewType = popupViewType
         
         let navi = UINavigationController(rootViewController: vc)

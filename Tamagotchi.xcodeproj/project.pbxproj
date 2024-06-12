@@ -28,7 +28,7 @@
 		E09454B82C146DB100D2E9B3 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */; };
 		E09454BB2C1478A500D2E9B3 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E09454BA2C1478A500D2E9B3 /* Toast */; };
 		E09454BD2C14991B00D2E9B3 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454BC2C14991B00D2E9B3 /* UserDefaultsManager.swift */; };
-		E09454BF2C155A9800D2E9B3 /* ButtonImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */; };
+		E09454BF2C155A9800D2E9B3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454BE2C155A9800D2E9B3 /* Enums.swift */; };
 		E09454C22C155E2E00D2E9B3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454C12C155E2E00D2E9B3 /* SettingViewController.swift */; };
 		E09454C52C1564C900D2E9B3 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454C42C1564C900D2E9B3 /* SettingTableViewCell.swift */; };
 		E09454C72C15667000D2E9B3 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454C62C15667000D2E9B3 /* Setting.swift */; };
@@ -58,7 +58,7 @@
 		E09454B32C14690E00D2E9B3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E09454B72C146DB100D2E9B3 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		E09454BC2C14991B00D2E9B3 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonImageType.swift; sourceTree = "<group>"; };
+		E09454BE2C155A9800D2E9B3 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		E09454C12C155E2E00D2E9B3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E09454C42C1564C900D2E9B3 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E09454C62C15667000D2E9B3 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		E09454722C13622C00D2E9B3 /* Tamagotchi */ = {
 			isa = PBXGroup;
 			children = (
-				E09454BE2C155A9800D2E9B3 /* ButtonImageType.swift */,
+				E0A881E92C19A54B00538021 /* Enum */,
 				E09454952C1369ED00D2E9B3 /* Protocol */,
 				E09454A62C13E9E400D2E9B3 /* Extension */,
 				E094548B2C13633000D2E9B3 /* Model */,
@@ -200,6 +200,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		E0A881E92C19A54B00538021 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				E09454BE2C155A9800D2E9B3 /* Enums.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,7 +291,7 @@
 				E09454B02C14650100D2E9B3 /* UIButton + Extension.swift in Sources */,
 				E09454D12C15733C00D2E9B3 /* UserNameChangeViewController.swift in Sources */,
 				E09454BD2C14991B00D2E9B3 /* UserDefaultsManager.swift in Sources */,
-				E09454BF2C155A9800D2E9B3 /* ButtonImageType.swift in Sources */,
+				E09454BF2C155A9800D2E9B3 /* Enums.swift in Sources */,
 				E09454742C13622C00D2E9B3 /* AppDelegate.swift in Sources */,
 				E09454762C13622C00D2E9B3 /* SceneDelegate.swift in Sources */,
 				E09454C52C1564C900D2E9B3 /* SettingTableViewCell.swift in Sources */,

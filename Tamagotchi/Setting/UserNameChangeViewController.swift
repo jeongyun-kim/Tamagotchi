@@ -15,7 +15,7 @@ class UserNameChangeViewController: UIViewController, setupView {
     
     lazy var naviBorder: UIView = makeBorder(alpha: 0.2)
     
-    lazy var userNameTextField = makeTextField(placeholder: "대장님 이름을 알려주세요!", isMainView: false)
+    lazy var userNameTextField = makeTextField(placeholder: Placeholder.nameTextField.rawValue, isMainView: false)
 
     lazy var textFieldBorder = makeBorder()
     
@@ -65,6 +65,7 @@ class UserNameChangeViewController: UIViewController, setupView {
         
         userNameTextField.becomeFirstResponder()
         userNameTextField.delegate = self
+        userNameTextField.text = ud.userName
     }
     
     @objc func saveBtnTapped() {
@@ -73,7 +74,7 @@ class UserNameChangeViewController: UIViewController, setupView {
         let removeWhiteSpaceTextCnt = text.components(separatedBy: " ").joined().count
         // 공백 제거 후 남은 문자가 0개거나 입력한 문자가 2문자 미만일 때
         if removeWhiteSpaceTextCnt == 0 || text.count < minimumLength  {
-            showToast(message: "닉네임은 2글자 이상 입력해주세용 :) ")
+            showToast(message: ToastMessage.nameToast.rawValue)
         } else  {
             ud.userName = text
             navigationController?.popViewController(animated: true)
@@ -88,7 +89,7 @@ class UserNameChangeViewController: UIViewController, setupView {
 
 extension UserNameChangeViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let text = textField.text else { return false }
+        guard let userName = userNameTextField.text else { return false }
         
         // backspace
         if let char = string.cString(using: String.Encoding.utf8) {
@@ -98,7 +99,7 @@ extension UserNameChangeViewController: UITextFieldDelegate {
                 }
         }
         
-        return text.count >= maxLength ? false : true
+        return userName.count >= maxLength ? false : true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

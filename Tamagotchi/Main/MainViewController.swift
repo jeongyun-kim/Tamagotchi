@@ -57,17 +57,17 @@ class MainViewController: UIViewController, setupView {
         return label
     }()
     
-    lazy var foodTextField: UITextField = makeTextField(placeholder: "밥주세용", isMainView: true)
+    lazy var foodTextField: UITextField = makeTextField(placeholder: Placeholder.foodTextField.rawValue, isMainView: true)
     
     lazy var foodTextFieldBorder = makeBorder()
     
-    lazy var foodBtn: UIButton = makeButton("밥먹기", type: .food)
+    lazy var foodBtn: UIButton = makeButton(ButtonTitle.foodBtnTitle.rawValue, type: .food)
     
-    lazy var waterTextField: UITextField = makeTextField(placeholder: "물주세용", isMainView: true)
+    lazy var waterTextField: UITextField = makeTextField(placeholder: Placeholder.waterTextField.rawValue, isMainView: true)
     
     lazy var waterFieldBorder = makeBorder()
     
-    lazy var waterBtn = makeButton("물먹기", type: .water)
+    lazy var waterBtn = makeButton(ButtonTitle.waterBtnTitle.rawValue, type: .water)
     
     // MARK: viewDidLoad()
     override func viewDidLoad() {
@@ -84,7 +84,6 @@ class MainViewController: UIViewController, setupView {
         messages = Message.list // 데이터 갱신 시마다 초기화
         setupNavigation()
         updateTamagotchi()
-        print(ud.food, ud.water)
     }
     
     func setupHierarchy() {
@@ -179,7 +178,7 @@ class MainViewController: UIViewController, setupView {
     func setupNavigation() {
         navigationItem.title = "\(User.name)님의 다마고치"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.customTintColor]
-        let settingItem = UIBarButtonItem(image: UIImage(systemName: "person.circle.fill"), style: .plain, target: self, action: #selector(settingBtnTapped))
+        let settingItem = UIBarButtonItem(image: UIImage(systemName: ButtonImageType.setting.rawValue), style: .plain, target: self, action: #selector(settingBtnTapped))
         navigationItem.rightBarButtonItem = settingItem
         navigationController?.navigationBar.tintColor = .customTintColor
         navigationItem.setHidesBackButton(true, animated: true)
@@ -198,7 +197,7 @@ class MainViewController: UIViewController, setupView {
     }
     
     func updateTamagotchi() {
-        bubbleImageView.image = UIImage(named: "bubble")
+        bubbleImageView.image = UIImage(named: ImageView.bubble.rawValue)
         bubbleLabel.text = messages.randomElement()?.message
         guard let image = tamagotchi?.imageName else { return }
         tamagochiImageView.image = UIImage(named: image)
@@ -223,7 +222,7 @@ class MainViewController: UIViewController, setupView {
             foodCnt += 1
         } else { // 밥을 100개 이상 줬을 때
             if Int(food)! >= 100 {
-                showToast(message: "밥은 한 번에 99개까지만 먹을 수 있어용")
+                showToast(message: ToastMessage.foodToast.rawValue)
             } else { // 밥 100 미만
                 foodCnt += Int(food)!
             }
@@ -238,7 +237,7 @@ class MainViewController: UIViewController, setupView {
             waterCnt += 1
         } else { // 물 제한 50 이상
             if Int(water)! >= 50 {
-                showToast(message: "물은 한 번에 49방울까지만 먹을 수 있어용")
+                showToast(message: ToastMessage.waterToast.rawValue)
             } else { // 물 50 미만
                 waterCnt += Int(water)!
             }
