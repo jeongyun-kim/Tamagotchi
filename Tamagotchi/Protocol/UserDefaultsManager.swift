@@ -7,37 +7,41 @@
 
 import Foundation
 
-struct UserDefaultsManager {
+class UserDefaultsManager {
+    private init() {}
+    static let shared = UserDefaultsManager()
+    let standard = UserDefaults.standard
+    
     var userName: String {
         get {
-            UserDefaults.standard.string(forKey: "userName") ?? "대장"
+            standard.string(forKey: "userName") ?? "대장"
         }
         set{
-            UserDefaults.standard.setValue(newValue, forKey: "userName")
+            standard.setValue(newValue, forKey: "userName")
         }
     }
     
     var selectedTamagotchiRawValue: Int {
         get {
-            return UserDefaults.standard.integer(forKey: "selectedTamagotchiIdx")
+            standard.integer(forKey: "selectedTamagotchiIdx")
         }
         set{
-            UserDefaults.standard.setValue("\(newValue)", forKey: "selectedTamagotchiIdx")
+            standard.setValue("\(newValue)", forKey: "selectedTamagotchiIdx")
         }
     }
     
     var food: Int {
         get {
-            UserDefaults.standard.integer(forKey: "food")
+            standard.integer(forKey: "food")
         }
         set{
-            UserDefaults.standard.setValue(newValue, forKey: "food")
+            standard.setValue(newValue, forKey: "food")
         }
     }
     
     var water: Int {
         get {
-            UserDefaults.standard.integer(forKey: "water")
+            standard.integer(forKey: "water")
         }
         set{
             UserDefaults.standard.setValue(newValue, forKey: "water")

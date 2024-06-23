@@ -147,9 +147,9 @@ class PopupViewController: UIViewController, setupView {
         let vc = MainViewController()
         vc.tamagotchi = tamagotchi // 사용자가 선택한 다마고치 세팅
         
-        var ud = UserDefaultsManager()
-        ud.userName = User.name // UserDefaults에 현재 사용자명 저장
-        ud.selectedTamagotchiRawValue = tamagotchi!.type.rawValue // UserDefaults에 현재 사용자가 선택한 다마고치의 rawValue(1부터) 저장
+        let shared = UserDefaultsManager.shared
+        shared.userName = User.name // UserDefaults에 현재 사용자명 저장
+        shared.selectedTamagotchiRawValue = tamagotchi!.type.rawValue // UserDefaults에 현재 사용자가 선택한 다마고치의 rawValue(1부터) 저장
     
         navigationController?.pushViewController(vc, animated: false)
     }

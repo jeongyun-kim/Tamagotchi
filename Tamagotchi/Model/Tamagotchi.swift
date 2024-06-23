@@ -22,8 +22,8 @@ struct Tamagotchi {
     // UserDefaults에 저장된 값 받아오기(없다면 자연스럽게 0으로)
     // 저장 프로퍼티로 쓰면 리셋됐을 때 바로 값을 반영하지 못해서 status값이 이전 데이터가 나옴
     // => 연산 프로퍼티로 사용해주기
-    static var food: Int { return UserDefaultsManager().food }
-    static var water: Int { return UserDefaultsManager().water }
+    static var food: Int { return UserDefaultsManager.shared.food }
+    static var water: Int { return UserDefaultsManager.shared.water }
     
     static var level: Int {
         let expToLevel = (food/5 + water/2)/10

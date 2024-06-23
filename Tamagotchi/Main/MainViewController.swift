@@ -11,19 +11,19 @@ import Toast
 
 class MainViewController: UIViewController, setupView {
     
-    lazy var ud = UserDefaultsManager()
+    lazy var shared = UserDefaultsManager.shared
     
     // 사용자가 현재 선택한 다마고치 받아오기
     lazy var tamagotchi: Tamagotchi? = nil
 
-    lazy var foodCnt = ud.food { // 밥양 가져오기
+    lazy var foodCnt = shared.food { // 밥양 가져오기
         didSet {
             saveData()
             updateTamagotchi()
         }
     }
     
-    lazy var waterCnt = ud.water { // 물양 가져오기 
+    lazy var waterCnt = shared.water { // 물양 가져오기
         didSet {
             saveData()
             updateTamagotchi()
@@ -206,8 +206,8 @@ class MainViewController: UIViewController, setupView {
     }
     
     func saveData() {
-        ud.food = foodCnt // UserDefaults에 현재 food값 저장
-        ud.water = waterCnt // UserDefault에 현재 water값 저장
+        shared.food = foodCnt // UserDefaults에 현재 food값 저장
+        shared.water = waterCnt // UserDefault에 현재 water값 저장
     }
     
     // MARK: Action

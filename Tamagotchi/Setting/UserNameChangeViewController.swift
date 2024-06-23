@@ -10,8 +10,7 @@ import SnapKit
 import Toast
 
 class UserNameChangeViewController: UIViewController, setupView {
-   
-    lazy var ud = UserDefaultsManager()
+    lazy var shared = UserDefaultsManager.shared
     
     lazy var naviBorder: UIView = makeBorder(alpha: 0.2)
     
@@ -65,7 +64,7 @@ class UserNameChangeViewController: UIViewController, setupView {
         
         userNameTextField.becomeFirstResponder()
         userNameTextField.delegate = self
-        userNameTextField.text = ud.userName
+        userNameTextField.text = shared.userName
     }
     
     @objc func saveBtnTapped() {
@@ -76,7 +75,7 @@ class UserNameChangeViewController: UIViewController, setupView {
         if removeWhiteSpaceTextCnt == 0 || text.count < minimumLength  {
             showToast(message: ToastMessage.nameToast.rawValue)
         } else  {
-            ud.userName = text
+            shared.userName = text
             navigationController?.popViewController(animated: true)
         }
     }

@@ -9,7 +9,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    let ud = UserDefaultsManager()
+    let shared = UserDefaultsManager.shared
     
     var window: UIWindow?
 
@@ -23,9 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Tamagotchi 각 모델의 rawValue는 1부터이므로 0이 나오면 저장된 데이터가 없는 것
         // 저장된 데이터가 있다면 Main vc 불러오고 다마고치 데이터 넣어주기
-        if UserDefaultsManager().selectedTamagotchiRawValue != 0 {
+        if shared.selectedTamagotchiRawValue != 0 {
             let vc = MainViewController()
-            vc.tamagotchi = Tamagotchi.list[ud.selectedTamagotchiRawValue-1]
+            vc.tamagotchi = Tamagotchi.list[shared.selectedTamagotchiRawValue-1]
             mainView = UINavigationController(rootViewController: vc)
         }
         

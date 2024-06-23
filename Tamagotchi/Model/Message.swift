@@ -9,7 +9,7 @@ import Foundation
 
 struct Message {
     let message: String
-    static var userName: String = UserDefaultsManager().userName
+    static var userName: String = UserDefaultsManager.shared.userName
 }
 
 extension Message {
