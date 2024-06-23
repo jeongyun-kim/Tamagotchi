@@ -34,6 +34,8 @@
 		E09454C72C15667000D2E9B3 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454C62C15667000D2E9B3 /* Setting.swift */; };
 		E09454CD2C156D2A00D2E9B3 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454CC2C156D2A00D2E9B3 /* UIColor + Extension.swift */; };
 		E09454D12C15733C00D2E9B3 /* UserNameChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09454D02C15733C00D2E9B3 /* UserNameChangeViewController.swift */; };
+		E0B0B6E32C1AC40700A24154 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E0B0B6E22C1AC40700A24154 /* IQKeyboardManagerSwift */; };
+		E0B5E5512C27F2630024ADB8 /* ErrorCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B5E5502C27F2630024ADB8 /* ErrorCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,7 @@
 		E09454C62C15667000D2E9B3 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		E09454CC2C156D2A00D2E9B3 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		E09454D02C15733C00D2E9B3 /* UserNameChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameChangeViewController.swift; sourceTree = "<group>"; };
+		E0B5E5502C27F2630024ADB8 /* ErrorCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 			files = (
 				E09454BB2C1478A500D2E9B3 /* Toast in Frameworks */,
 				E09454902C13692200D2E9B3 /* SnapKit in Frameworks */,
+				E0B0B6E32C1AC40700A24154 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				E09454BE2C155A9800D2E9B3 /* Enums.swift */,
+				E0B5E5502C27F2630024ADB8 /* ErrorCase.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			packageProductDependencies = (
 				E094548F2C13692200D2E9B3 /* SnapKit */,
 				E09454BA2C1478A500D2E9B3 /* Toast */,
+				E0B0B6E22C1AC40700A24154 /* IQKeyboardManagerSwift */,
 			);
 			productName = Tamagotchi;
 			productReference = E09454702C13622C00D2E9B3 /* Tamagotchi.app */;
@@ -259,6 +265,7 @@
 			packageReferences = (
 				E094548E2C13692200D2E9B3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E09454B92C1478A500D2E9B3 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				E0B0B6E12C1AC40700A24154 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = E09454712C13622C00D2E9B3 /* Products */;
 			projectDirPath = "";
@@ -306,6 +313,7 @@
 				E094549D2C13773F00D2E9B3 /* UILabel + Extension.swift in Sources */,
 				E09454A52C13E75800D2E9B3 /* User.swift in Sources */,
 				E09454922C13694000D2E9B3 /* ReusableIdentifier.swift in Sources */,
+				E0B5E5512C27F2630024ADB8 /* ErrorCase.swift in Sources */,
 				E09454C22C155E2E00D2E9B3 /* SettingViewController.swift in Sources */,
 				E09454AE2C13EED400D2E9B3 /* PopupViewController.swift in Sources */,
 				E09454B22C14678500D2E9B3 /* Message.swift in Sources */,
@@ -549,6 +557,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		E0B0B6E12C1AC40700A24154 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -561,6 +577,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E09454B92C1478A500D2E9B3 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		E0B0B6E22C1AC40700A24154 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0B0B6E12C1AC40700A24154 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

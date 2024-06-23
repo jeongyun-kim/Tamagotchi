@@ -44,8 +44,6 @@ enum Placeholder: String {
 }
 
 enum ToastMessage: String {
-    case foodToast = "밥은 한 번에 99개까지만 먹을 수 있어용"
-    case waterToast = "물은 한 번에 49방울까지만 먹을 수 있어용"
     case nameToast = "닉네임은 2글자 이상 입력해주세용 :) "
 }
 

@@ -187,8 +187,8 @@ class MainViewController: UIViewController, setupView {
     
     func setupUI() {
         view.backgroundColor = .customBackgroundColor
-        foodTextField.delegate = self
-        waterTextField.delegate = self
+        //foodTextField.delegate = self
+        //waterTextField.delegate = self
     }
     
     func addTargets() {
@@ -215,34 +215,57 @@ class MainViewController: UIViewController, setupView {
         view.endEditing(true)
     }
     
+    private func getFoodCount(food: String) throws -> Int {
+        guard !food.isEmpty else {
+            return 1
+        }
+        guard Int(food)! < 100 else {
+            throw ErrorCase.isFoodOver
+        }
+        return Int(food)!
+    }
+    
     @objc func foodBtnTapped(_ sender: UIButton) {
         guard let food = foodTextField.text else { return }
-        // 아무런 입력이 없을 때
-        if food.isEmpty {
-            foodCnt += 1
-        } else { // 밥을 100개 이상 줬을 때
-            if Int(food)! >= 100 {
-                showToast(message: ToastMessage.foodToast.rawValue)
-            } else { // 밥 100 미만
-                foodCnt += Int(food)!
+        do {
+            let food = try getFoodCount(food: food)
+            foodCnt += food
+        } catch {
+            switch error {
+            case ErrorCase.isFoodOver:
+                showToast(message: ErrorCase.isFoodOver.toastMessage)
+            default:
+                break
             }
-            foodTextField.text = ""
         }
+        foodTextField.text = ""
+    }
+    
+    private func getWaterCount(water: String) throws -> Int {
+        guard !water.isEmpty else {
+            return 1
+        }
+        guard Int(water)! < 50 else {
+            throw ErrorCase.isWaterOver
+        }
+        return Int(water)!
     }
     
     @objc func waterBtnTapped(_ sender: UIButton) {
         guard let water = waterTextField.text else { return }
-        // 아무것도 입력하지 않았다면
-        if water.isEmpty {
-            waterCnt += 1
-        } else { // 물 제한 50 이상
-            if Int(water)! >= 50 {
-                showToast(message: ToastMessage.waterToast.rawValue)
-            } else { // 물 50 미만
-                waterCnt += Int(water)!
-            }
-            waterTextField.text = ""
+        do {
+            let waterCount = try getWaterCount(water: water)
+            waterCnt += waterCount
         }
+        catch {
+            switch error {
+            case ErrorCase.isWaterOver:
+                showToast(message: ErrorCase.isWaterOver.rawValue)
+            default:
+                break
+            }
+        }
+        waterTextField.text = ""
     }
     
     @objc func settingBtnTapped(_ sender: UIButton) {
@@ -251,22 +274,3 @@ class MainViewController: UIViewController, setupView {
     }
 }
 
-
-// MARK: TextFieldDelegate
-extension MainViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        // 부드러운 효과를 위해 애니메이션 처리 -> 뷰 250만큼 올리기
-       UIView.animate(withDuration: 0.3) {
-           let transform = CGAffineTransform(translationX: 0, y: -200)
-           self.view.transform = transform
-        }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // 뷰 다시 0으로 내리기
-        UIView.animate(withDuration: 0.3) {
-            let transform = CGAffineTransform(translationX: 0, y: 0)
-            self.view.transform = transform
-        }
-    }
-}
